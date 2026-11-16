@@ -9,6 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: .
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,4 +27,5 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -v
+          python -m pytest -v
+
